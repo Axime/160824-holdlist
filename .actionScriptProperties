@@ -3,7 +3,7 @@
   <compiler additionalCompilerArguments="-locale en_US" advancedTelemetry="false" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="false" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="true" useDebugRSLSwfs="true" useFlashSDK="true" verifyDigests="true" warn="true">
     <compilerSourcePath>
       <compilerSourcePathEntry kind="1" linkType="1" path="res"/>
-      <compilerSourcePathEntry kind="1" linkType="1" path="C:/as3/Axime-axime2d-v1.1-5c5d6c65344e/source/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="C:/as3/axime2d-v1.1/source/src"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">
@@ -37,7 +37,7 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
-      <libraryPathEntry kind="3" linkType="1" path="C:/as3/Axime-axime2d-v1.1-5c5d6c65344e/lib/axime2d-z.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="C:/as3/axime2d-v1.1/lib/axime2d-z.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -52,7 +52,6 @@
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
     <buildTarget airDownloadURL="https://market.android.com/details?id=com.adobe.air" androidSettingsVersion="2" buildTargetName="device" isCurrent="true" platformId="com.adobe.flexide.multiplatform.android.platform">
-      <multiPlatformSettings enabled="true" hideAneLibSymbols="0" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.android.platform" reducedSizePackaging="false" version="1"/>
       <airSettings airCertificatePath="C:/Users/Agony/Desktop/a.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths/>
@@ -61,10 +60,10 @@
         <newPackagingParams/>
         <modifiedPackagingParams/>
       </airSettings>
+      <multiPlatformSettings enabled="true" hideAneLibSymbols="0" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.android.platform" reducedSizePackaging="false" version="1"/>
       <actionScriptSettings version="1"/>
     </buildTarget>
     <buildTarget buildTargetName="default" isCurrent="true" platformId="default">
-      <multiPlatformSettings enabled="false" hideAneLibSymbols="0" includePlatformLibs="false" platformID="default" reducedSizePackaging="false" version="1"/>
       <airSettings airCertificatePath="" airTimestamp="true" anePathSet="false" version="1">
         <airExcludes/>
         <anePaths/>
@@ -73,8 +72,8 @@
         <newPackagingParams/>
         <modifiedPackagingParams/>
       </airSettings>
+      <multiPlatformSettings enabled="false" hideAneLibSymbols="0" includePlatformLibs="false" platformID="default" reducedSizePackaging="false" version="1"/>
       <actionScriptSettings version="1"/>
     </buildTarget>
   </buildTargets>
 </actionScriptProperties>
-

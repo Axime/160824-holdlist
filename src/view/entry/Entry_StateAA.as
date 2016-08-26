@@ -113,6 +113,8 @@ public class Entry_StateAA extends StateAA {
 		
 	private function doMakeGesture():void{
 		_tabGesture = GestureFacade.recognize(_bottomFN, SwipeGestureRecognizer) as SwipeGestureRecognizer;
+		_tabGesture.setDistance(80);
+		
 		_tabGesture.addEventListener(AEvent.COMPLETE, onTabSwipeComplete);
 		
 	}

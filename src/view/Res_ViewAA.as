@@ -32,6 +32,8 @@ public class Res_ViewAA extends ViewAA {
 				"img/list_A.jpg",
 				"img/list_B.jpg", 
 				"img/hold.jpg", 
+				"img/hold2.png", 
+				"img/holdLight.png", 
 				
 				"btn/a0.png", 
 				"btn/a1.png", 

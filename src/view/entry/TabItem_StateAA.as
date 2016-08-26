@@ -7,11 +7,14 @@ package view.entry
 	import d2.axime.display.FusionAA;
 	import d2.axime.display.ImageAA;
 	import d2.axime.display.StateAA;
+	import d2.axime.display.StateFusionAA;
 	import d2.axime.events.AEvent;
 	import d2.axime.events.NTouchEvent;
+	import d2.axime.utils.AMath;
 	import d2.axime.window.Touch;
 	
 	import view.ViewConfig;
+	import view.comp.Range_CompAA;
 	
 	public class TabItem_StateAA extends StateAA
 	{
@@ -33,20 +36,22 @@ package view.entry
 			
 			tween.easing = Quad.easeOut;
 			
+			TweenMachine.to(_holdState, _ratio * 0.3, {ratio:0});
 		}
 		
 		
 		
 		override public function onEnter():void {
+			var stateFN:StateFusionAA;
 			
-			_holdImg = new ImageAA;
-			this.getFusion().addNode(_holdImg);
-			_holdImg.textureId = "common/img/hold.jpg";
-			_holdImg.pivotX = _holdImg.sourceWidth / 2;
-			_holdImg.pivotY = _holdImg.sourceHeight / 2;
-			_holdImg.x = Axime.getWindow().rootWidth / 2;
-			_holdImg.y = 380;
-			//_holdImg.alpha = 0.0;
+			stateFN = new StateFusionAA;
+			this.getFusion().addNode(stateFN);
+			stateFN.setState(new Range_CompAA);
+			_holdState = stateFN.getState() as Range_CompAA;
+			stateFN.x = Axime.getWindow().rootWidth / 2;
+			stateFN.y = 300;
+			
+			
 			
 			_dragFN = new FusionAA;
 			this.getFusion().addNode(_dragFN);
@@ -69,8 +74,9 @@ package view.entry
 		protected var _currTouch:Touch;
 		protected var _ratio:Number = 0.0;
 		
-		protected var _holdImg:ImageAA;
+
 		protected var _startY:Number;
+		protected var _holdState:Range_CompAA;
 		
 		
 		private function onStartDrag(e:NTouchEvent):void{
@@ -89,6 +95,7 @@ package view.entry
 			var tmpRatio:Number;
 			var offsetY:Number;
 			var coordY:Number;
+			var tween:ATween;
 			
 			_ratio = _currTouch.rootY / Axime.getWindow().rootHeight / 1.25;
 			tmpRatio = 1.0 - _ratio * _ratio;
@@ -96,7 +103,7 @@ package view.entry
 			if(_startY < 0){
 				_startY = 0;
 			}
-			TweenMachine.to(_dragFN, 0.05,{y: _startY});
+			tween = TweenMachine.to(_dragFN, 0.05,{y: _startY});
 			
 //			offsetY = _currTouch.rootY - _startY;
 //			offsetY = offsetY * (1 - Math.abs(offsetY) / Axime.getWindow().rootHeight);
@@ -105,6 +112,11 @@ package view.entry
 //				coordY = 0;
 //			}
 //			TweenMachine.to(_dragFN, 0.05,{y: coordY});
+			
+			//_holdState.ratio = AMath.calcRatio(_ratio * 1.25, 0.25, 0.45);
+			tween.onUpdate = function() :void{
+				_holdState.ratio = AMath.calcRatio(_dragFN.y / Axime.getWindow().rootHeight, 0.05, 0.22);
+			}
 		}
 		
 		

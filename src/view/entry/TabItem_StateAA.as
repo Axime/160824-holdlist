@@ -109,7 +109,8 @@ package view.entry
 		
 		
 		private function onTouchComplete(e:AEvent):void{
-			if((_dragFN.y>ViewConfig.DRAG_LIMIT - 30 && _currTouch.velocityY > -115) || _currTouch.velocityY > 110){
+//			if((_dragFN.y>ViewConfig.DRAG_LIMIT - 30 && _currTouch.velocityY > -115) || _currTouch.velocityY > 110){
+				if((_dragFN.y>ViewConfig.DRAG_LIMIT - 30 && _currTouch.velocityY > -110)){
 				TweenMachine.to(_dragFN, 0.15,{y: ViewConfig.DRAG_LIMIT}).easing = Quad.easeOut;
 			}
 			else {
